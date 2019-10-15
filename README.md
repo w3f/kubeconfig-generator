@@ -1,1 +1,1 @@
-# k8s-user-access
+# kubeconfig-generator
