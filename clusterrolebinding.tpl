@@ -1,7 +1,7 @@
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
- name: vieweruser
+ name: ${ROLE}_binding_kubeconfig_creator
 subjects:
 - kind: User
   name: ${USER}

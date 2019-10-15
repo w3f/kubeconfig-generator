@@ -5,9 +5,10 @@ set -euxo pipefail
 export USER=${1:-user}
 export ORG=${2:-org}
 export ROLE=${3:-view}
-export CSR_NAME=${4:-mycsr}
+export ROLE_NAME=${ROLE}_binding_kubeconfig_creator
+export CSR_NAME=${4:-mycsr_kubeconfig_creator}
 
-kubectl delete clusterrolebinding ${ROLE} || true
+kubectl delete clusterrolebinding ${ROLE_NAME} || true
 kubectl delete csr ${CSR_NAME} || true
 
 rm -rf build && mkdir build
